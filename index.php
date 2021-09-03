@@ -4,7 +4,7 @@
       $output .= '<form>';
       $output .= input('12', 'First Name');
       $output .= input('12', 'Last Name');
-      $output .= input('12', 'Phone Number');
+      $output .= input('12', 'Phone Number', 'number');
       $output .= textarea('12','Message');
       $output .= recaptcha();
       $output .= submit('12','Message');
@@ -13,9 +13,9 @@
     return $output;
   }
 
-  function input($width = '', $label = ''){
+  function input($width = '', $label = '', $type='text'){
     $cleaned = strtolower(str_replace(' ', '_', $label));
-    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><input id="'.$cleaned.'" type="text" value="" name="'.$cleaned.'"></div>';
+    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><input id="'.$cleaned.'" type="'.$type.'" value="" name="'.$cleaned.'"></div>';
   }
 
   function textarea($width = '', $label = ''){
