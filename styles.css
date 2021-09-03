@@ -1,10 +1,50 @@
-:root{
+:root {
   --main-g1-color: #7FC8A9;
   --main-g2-color: #D5EEBB;
   --main-g3-color: #5F7A61;
   --main-g4-color: #444941;
 }
 
-body{
+body {
   background-color: var(--main-g2-color);
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+input, textarea {
+  border: 2px solid var(--main-g4-color);
+  padding: .4rem;
+  line-height: 2rem;
+}
+
+form>div {
+  margin-bottom: 20px;
+}
+
+.formBuild {
+  width: clamp(300px, 50vw ,600px);
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }

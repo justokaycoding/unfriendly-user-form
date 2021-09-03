@@ -1,4 +1,37 @@
-<?php ?>
+<?php
+  function formBuild(){
+    $output .= '<div class="formBuild">';
+      $output .= '<form>';
+      $output .= input('12', 'First Name');
+      $output .= input('12', 'Last Name');
+      $output .= input('12', 'Phone Number');
+      $output .= textarea('12','Message');
+      $output .= recaptcha();
+      $output .= submit('12','Message');
+      $output .= '</form>';
+    $output .= '</div>';
+    return $output;
+  }
+
+  function input($width = '', $label = ''){
+    $cleaned = strtolower(str_replace(' ', '_', $label));
+    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><input id="'.$cleaned.'" type="text" value="" name="'.$cleaned.'"></div>';
+  }
+
+  function textarea($width = '', $label = ''){
+    $cleaned = strtolower(str_replace(' ', '_', $label));
+    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><textarea id="'.$cleaned.'" name="'.$cleaned.'" rows="" cols="" maxlength=""></textarea></div>';
+  }
+
+  function recaptcha(){
+    return '<div class="recaptcha"></div>';
+  }
+
+  function submit($width = '', $label = ''){
+    return '<div class="w-'.$width.'"><input type="submit" value="SUBMIT"></div>';
+  }
+
+?>
 
 <html lang="en">
 
@@ -6,6 +39,7 @@
   <meta charset="UTF-8">
   <title>Unfriendly UX/UI</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="foundation.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -15,7 +49,7 @@
 </head>
 
 <body>
-  <div class="content-wrapper" style="padding-top: 239.516px;">
+  <div class="content-wrapper">
 
     <main role="main">
       <div id="content">
@@ -24,6 +58,7 @@
             <div class="constraint halign-left valign-top">
               <div id="" class="column width-12">
                 <div class="wrapper text">
+                  <?php echo formBuild() ?>
                 </div>
               </div>
             </div>
