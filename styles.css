@@ -61,16 +61,19 @@ input {
 
 .button {
   display: inline-block;
-  height: 100%;
   background-color: var(--main-g3-color);
   border: 2px solid var(--main-g4-color);
-  padding: .4rem 1rem;
-  line-height: 2rem;
+  padding: 0.9rem 1rem;
+  line-height: 30rem;
   border-left: 0;
-  font-size: 1.5rem;
+  font-size: 6.5rem;
   color: #fff;
   cursor: pointer;
   transition: all .2s ease-in-out;
+}
+
+.button i{
+  font-size: 1rem;
 }
 
 .button:hover {

@@ -3,11 +3,11 @@
     $output = '<div class="formBuild">';
 
       $output .= '<div class="number_1 input_wrap">';
-        $output .= input('12', 'Please Enter Your Phone number 1:', '<span class="button increase">+</span>');
+        $output .= input('12', 'Please Enter Your Phone number 1:', '<span class="button increase"><i class="fas fa-plus"></i></span>');
       $output .= '</div>';
 
       $output .= '<div class="number_2 input_wrap">';
-        $output .= input('12', 'Please Enter Your Phone number 2:', '<span class="button pause">=</span>');
+        $output .= input('12', 'Please Enter Your Phone number 2:', '<span class="button pause"><i class="fas fa-pause"></i></span>');
       $output .= '</div>';
 
     $output .= '</div>';

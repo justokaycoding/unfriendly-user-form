@@ -27,12 +27,14 @@
     clearInterval(inter);
     $(this).removeClass('pause');
     $(this).addClass('play');
+    $(this).html('<i class="fas fa-play"></i>');
   });
 
   $(document).on("click", ".number_2 .play", function() {
     randomNumber();
     $(this).removeClass('play');
     $(this).addClass('pause');
+    $(this).html('<i class="fas fa-pause"></i>');
   });
 
   let formatPhoneNumber = (phoneNumber) => {
@@ -61,8 +63,9 @@
     let input2 = $('.number_2 input');
 
     inter = setInterval(function(){
-      input2.val(getRndInteger(1000000000,9999999999));
-    }, 500);
+      let cleaned = formatPhoneNumber(getRndInteger(1000000000,9999999999))
+      input2.val( cleaned );
+    }, 100);
   }
 
 })(jQuery)
