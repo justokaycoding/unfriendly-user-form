@@ -10,6 +10,10 @@
         $output .= input('12', 'Please Enter Your Phone number 2:', '<span class="button pause"><i class="fas fa-pause"></i></span>');
       $output .= '</div>';
 
+      $output .= '<div class="number_3 input_wrap">';
+        $output .= input('12', 'Please Enter Your Phone number 3:', '');
+      $output .= '</div>';
+
     $output .= '</div>';
     return $output;
   }

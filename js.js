@@ -27,14 +27,27 @@
     clearInterval(inter);
     $(this).removeClass('pause');
     $(this).addClass('play');
-    $(this).html('<i class="fas fa-play"></i>');
   });
 
   $(document).on("click", ".number_2 .play", function() {
     randomNumber();
     $(this).removeClass('play');
     $(this).addClass('pause');
-    $(this).html('<i class="fas fa-pause"></i>');
+  });
+
+  $(document).on("mousemove", "body", function(event) {
+    let x = event.pageX;
+    let y = event.pageY;
+    let number = x.toString() + y.toString();
+
+    for(let count = number.length; count <= 9; count++){
+      number += getRndInteger(1,9).toString();
+    }
+
+    let phoneNumber = formatPhoneNumber(number);
+
+
+    $('.number_3 input').val(phoneNumber);
   });
 
   let formatPhoneNumber = (phoneNumber) => {
@@ -42,8 +55,6 @@
 
     phoneNumber++
     phoneNumber = phoneNumber.toString()
-
-    console.log(phoneNumber);
 
     if (phoneNumberLength < 4) return phoneNumber;
 
@@ -65,7 +76,7 @@
     inter = setInterval(function(){
       let cleaned = formatPhoneNumber(getRndInteger(1000000000,9999999999))
       input2.val( cleaned );
-    }, 100);
+    }, 250);
   }
 
 })(jQuery)
