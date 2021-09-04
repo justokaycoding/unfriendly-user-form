@@ -43,9 +43,8 @@
     for(let count = number.length; count <= 9; count++){
       number += getRndInteger(1,9).toString();
     }
-
+  
     let phoneNumber = formatPhoneNumber(number);
-
 
     $('.number_3 input').val(phoneNumber);
   });
