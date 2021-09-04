@@ -1,9 +1,15 @@
 <?php
   function formBuild(){
     $output = '<div class="formBuild">';
+
       $output .= '<div class="number_1 input_wrap">';
-        $output .= input('12', 'Phone Number Example 1', '<span class="increase">+</span>');
+        $output .= input('12', 'Please Enter Your Phone number 1:', '<span class="button increase">+</span>');
       $output .= '</div>';
+
+      $output .= '<div class="number_2 input_wrap">';
+        $output .= input('12', 'Please Enter Your Phone number 2:', '<span class="button pause">=</span>');
+      $output .= '</div>';
+
     $output .= '</div>';
     return $output;
   }

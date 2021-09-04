@@ -37,11 +37,15 @@ form>div {
 }
 
 .formBuild {
-  width: clamp(300px, 50vw, 600px);
+  width: clamp(300px, 100%, 600px);
   margin: 0 auto;
 }
 
-.number_1 div:not(.w-12) {
+.input_wrap{
+  margin-bottom: 20px;
+}
+
+.input_wrap div:not(.w-12) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +59,7 @@ input {
   pointer-events: none;
 }
 
-.increase {
+.button {
   display: inline-block;
   height: 100%;
   background-color: var(--main-g3-color);
@@ -69,6 +73,6 @@ input {
   transition: all .2s ease-in-out;
 }
 
-.increase:hover {
+.button:hover {
   background-color: #009688;
 }
