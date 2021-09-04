@@ -30,6 +30,10 @@ input, textarea {
   border: 2px solid var(--main-g4-color);
   padding: .4rem;
   line-height: 2rem;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: none;
 }
 
 form>div {
