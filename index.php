@@ -1,34 +1,16 @@
 <?php
   function formBuild(){
-    $output .= '<div class="formBuild">';
-      $output .= '<form>';
-      $output .= input('12', 'First Name');
-      $output .= input('12', 'Last Name');
-      $output .= input('12', 'Phone Number', 'number');
-      $output .= textarea('12','Message');
-      $output .= recaptcha();
-      $output .= submit('12','Message');
-      $output .= '</form>';
+    $output = '<div class="formBuild">';
+      $output .= '<div class="number_1 input_wrap">';
+        $output .= input('12', 'Phone Number Example 1', '<span class="increase">+</span>');
+      $output .= '</div>';
     $output .= '</div>';
     return $output;
   }
 
-  function input($width = '', $label = '', $type='text'){
+  function input($width = '', $label = '', $add=''){
     $cleaned = strtolower(str_replace(' ', '_', $label));
-    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><input id="'.$cleaned.'" type="'.$type.'" value="" name="'.$cleaned.'"></div>';
-  }
-
-  function textarea($width = '', $label = ''){
-    $cleaned = strtolower(str_replace(' ', '_', $label));
-    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><textarea id="'.$cleaned.'" name="'.$cleaned.'" rows="" cols="" maxlength=""></textarea></div>';
-  }
-
-  function recaptcha(){
-    return '<div class="recaptcha"></div>';
-  }
-
-  function submit($width = '', $label = ''){
-    return '<div class="w-'.$width.'"><input type="submit" value="SUBMIT"></div>';
+    return '<div class="w-'.$width.'"><label for="'.$cleaned.'">'.$label.'</label><div><input id="'.$cleaned.'" type="text" value="" name="'.$cleaned.'">'.$add.'</div></div>';
   }
 
 ?>
